@@ -10,25 +10,27 @@
 body {
   margin: 0;
   font-family: 'Playfair Display', serif;
-  background-color: #eef9ff; /* azzurro molto leggero */
+  background-color: #eef9ff;
   color: #444;
+  overflow-x: hidden;
 }
 
 /* HEADER */
 header {
   text-align: center;
-  padding: 30px;
+  padding: 50px 20px 20px;
 }
 
 .miraya {
   font-family: 'Great Vibes', cursive;
-  font-size: 150px; /* 🔥 raddoppiato e più grande */
+  font-size: 150px;
   color: #e58db3;
   line-height: 1;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 .atelier {
-  letter-spacing: 6px;
+  letter-spacing: 8px;
   font-size: 18px;
   color: #7db8a6;
 }
@@ -37,31 +39,36 @@ header {
 .hero {
   height: 85vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #eef9ff, #ffe6f1);
   text-align: center;
   padding: 20px;
+  background: linear-gradient(135deg, #eef9ff, #fff0f6);
 }
 
 .hero h2 {
-  font-size: 28px;
-  margin-top: 20px;
+  font-size: 30px;
   color: #555;
+  max-width: 600px;
+  animation: fadeIn 2s ease-in-out;
 }
 
 /* PRODOTTI */
 .products {
-  padding: 60px 30px;
+  padding: 80px 40px;
   display: grid;
-  gap: 60px;
+  gap: 80px;
 }
 
 .product {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 50px;
+  transition: transform 0.5s ease;
+}
+
+.product:hover {
+  transform: scale(1.02);
 }
 
 .product:nth-child(even) {
@@ -69,8 +76,14 @@ header {
 }
 
 .product img {
-  width: 320px;
-  border-radius: 10px;
+  width: 340px;
+  border-radius: 14px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.product img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
 .product-text {
@@ -79,20 +92,35 @@ header {
 
 .product-text h3 {
   color: #e58db3;
-  font-size: 22px;
-  font-style: italic; /* ✨ corsivo per nomi borse */
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 10px;
 }
 
 .product-text p {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   background-color: #dff3ec;
+  margin-top: 60px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #e58db3;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* ANIMAZIONI */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 </style>
 </head>
@@ -141,7 +169,10 @@ footer {
 </section>
 
 <footer>
-  <p>Instagram: XXX</p>
+  <p>
+    Instagram: 
+    <a href="https://instagram.com/" target="_blank">@XXX</a>
+  </p>
 </footer>
 
 </body>
