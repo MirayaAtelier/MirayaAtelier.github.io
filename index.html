@@ -7,37 +7,66 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Playfair Display', serif;
   background-color: #eef9ff;
   color: #444;
-  overflow-x: hidden;
 }
 
-/* HEADER */
-header {
-  text-align: center;
-  padding: 50px 20px 20px;
+/* MENU */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 15px;
+  background: rgba(238,249,255,0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
-.miraya {
-  font-family: 'Great Vibes', cursive;
-  font-size: 150px;
+nav a {
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+nav a:hover {
   color: #e58db3;
-  line-height: 1;
-  animation: fadeIn 1.5s ease-in-out;
 }
 
-.atelier {
-  letter-spacing: 8px;
-  font-size: 18px;
-  color: #7db8a6;
+/* INTRO */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #eef9ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeOut 2.5s forwards;
+  animation-delay: 2s;
 }
 
-/* HERO */
+#intro h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 120px;
+  color: #e58db3;
+  animation: zoomIn 2s ease;
+}
+
+/* HOME */
 .hero {
-  height: 85vh;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,15 +76,60 @@ header {
 }
 
 .hero h2 {
-  font-size: 30px;
-  color: #555;
-  max-width: 600px;
-  animation: fadeIn 2s ease-in-out;
+  font-size: 36px;
+  max-width: 650px;
 }
 
-/* PRODOTTI */
+/* HEADER */
+header {
+  text-align: center;
+  padding: 120px 20px 40px;
+}
+
+.miraya {
+  font-family: 'Great Vibes', cursive;
+  font-size: 150px;
+  color: #e58db3;
+}
+
+.atelier {
+  letter-spacing: 8px;
+  font-size: 18px;
+  color: #7db8a6;
+}
+
+/* ABOUT */
+.about {
+  padding: 100px 40px;
+  text-align: center;
+}
+
+.about h2 {
+  color: #e58db3;
+  font-size: 28px;
+}
+
+/* GALLERY */
+.gallery {
+  padding: 80px 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* SHOP */
 .products {
-  padding: 80px 40px;
+  padding: 100px 40px;
   display: grid;
   gap: 80px;
 }
@@ -63,12 +137,7 @@ header {
 .product {
   display: flex;
   align-items: center;
-  gap: 50px;
-  transition: transform 0.5s ease;
-}
-
-.product:hover {
-  transform: scale(1.02);
+  gap: 40px;
 }
 
 .product:nth-child(even) {
@@ -77,102 +146,111 @@ header {
 
 .product img {
   width: 340px;
-  border-radius: 14px;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  border-radius: 12px;
+  transition: 0.4s;
 }
 
 .product img:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.product-text {
-  max-width: 450px;
 }
 
 .product-text h3 {
+  font-style: italic;
   color: #e58db3;
   font-size: 24px;
-  font-style: italic;
-  margin-bottom: 10px;
-}
-
-.product-text p {
-  font-size: 16px;
-  line-height: 1.7;
 }
 
 /* FOOTER */
 footer {
   text-align: center;
   padding: 40px;
-  background-color: #dff3ec;
-  margin-top: 60px;
+  background: #dff3ec;
 }
 
 footer a {
-  text-decoration: none;
   color: #e58db3;
+  text-decoration: none;
   font-weight: bold;
-  font-size: 18px;
 }
 
-/* ANIMAZIONI */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* ANIMATIONS */
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; visibility: hidden; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- MENU -->
+<nav>
+  <a href="#home">HOME</a>
+  <a href="#about">ABOUT</a>
+  <a href="#gallery">GALLERY</a>
+  <a href="#shop">SHOP</a>
+</nav>
+
+<!-- INTRO -->
+<div id="intro">
+  <h1>Miraya</h1>
+</div>
+
+<!-- HOME -->
+<section id="home" class="hero">
+  <h2>Eleganza, unicità e femminilità in ogni creazione</h2>
+</section>
+
 <header>
   <div class="miraya">Miraya</div>
   <div class="atelier">ATELIER</div>
 </header>
 
-<section class="hero">
-  <h2>Eleganza, unicità e femminilità in ogni creazione</h2>
+<!-- ABOUT -->
+<section id="about" class="about">
+  <h2>About Miraya</h2>
+  <p>
+    Miraya Atelier nasce dall’idea di creare borse uniche, eleganti e senza tempo.  
+    Ogni pezzo è pensato per esprimere femminilità, cura dei dettagli e personalità.
+  </p>
 </section>
 
-<section class="products">
+<!-- GALLERY -->
+<section id="gallery" class="gallery">
+  <img src="miraya1.jpg">
+  <img src="miraya2.jpg">
+  <img src="miraya3.jpg">
+  <img src="miraya4.jpg">
+</section>
 
-<!-- 1 BORSA -->
+<!-- SHOP -->
+<section id="shop" class="products">
+
 <div class="product">
   <img src="miraya_bijoux.png">
   <div class="product-text">
     <h3>Miraya Bijoux</h3>
-    <p>
-      Un design raffinato e prezioso, pensato come un vero gioiello da indossare.  
-      Ogni dettaglio è studiato per esaltare eleganza e femminilità.  
-      Colore completamente personalizzabile.  
-      <br><strong>35€</strong>
-    </p>
+    <p>Design elegante e prezioso.<br><strong>35€</strong></p>
   </div>
 </div>
 
-<!-- 2 BORSA -->
 <div class="product">
   <img src="miraya.png">
   <div class="product-text">
     <h3>Miraya Signature</h3>
-    <p>
-      Una creazione iconica del brand, elegante e moderna.  
-      Perfetta per chi cerca originalità e stile senza tempo.  
-      Totalmente personalizzabile nei colori.  
-      <br><strong>30€</strong>
-    </p>
+    <p>Iconica e moderna.<br><strong>30€</strong></p>
   </div>
 </div>
 
 </section>
 
 <footer>
-  <p>
-    Instagram: 
-    <a href="https://instagram.com/" target="_blank">@XXX</a>
-  </p>
+  <p>Instagram: <a href="https://www.instagram.com/atelier_miraya?igsh=MWt4cHJ5azYxb2hiMw==">@XXX</a></p>
 </footer>
 
 </body>
