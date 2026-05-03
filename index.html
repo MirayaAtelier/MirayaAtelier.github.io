@@ -62,7 +62,7 @@ header {
   color: #7db8a6;
 }
 
-/* HERO (FIX: rosa + corsivo + glitter soft leggibile) */
+/* HERO */
 .hero {
   height: 90vh;
   display: flex;
@@ -78,14 +78,10 @@ header {
   font-style: italic;
   font-weight: 600;
   max-width: 750px;
-
   color: #e58db3;
-
-  /* glitter soft */
   text-shadow:
     0 0 5px rgba(255,182,193,0.6),
     0 0 10px rgba(255,182,193,0.4);
-
   animation: popIn 1.8s ease, glow 2.5s infinite alternate;
   letter-spacing: 1px;
 }
@@ -126,6 +122,18 @@ header {
   transform: scale(1.05);
 }
 
+/* SHOP */
+#shop {
+  padding-top: 40px;
+}
+
+#shop-title {
+  text-align: center;
+  font-size: 28px;
+  color: #e58db3;
+  margin-top: 80px;
+}
+
 /* PRODUCTS */
 .product {
   display: flex;
@@ -159,12 +167,29 @@ header {
   line-height: 1.7;
 }
 
-/* SHOP SECTION RIPRISTINATA */
-#shop-title {
+/* INSTAGRAM BANNER */
+.insta-banner {
+  margin-top: 100px;
+  padding: 60px 20px;
   text-align: center;
-  font-size: 28px;
+  background: linear-gradient(135deg, #fff0f6, #eef9ff);
+}
+
+.insta-banner p {
+  font-size: 18px;
+  color: #777;
+}
+
+.insta-banner a {
+  font-size: 24px;
+  font-style: italic;
   color: #e58db3;
-  margin-top: 80px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.insta-banner a:hover {
+  color: #c76a90;
 }
 
 /* ANIMATIONS */
@@ -209,8 +234,8 @@ header {
     ma espressione di identità, eleganza e femminilità.  
     Ogni creazione è pensata per raccontare una storia, quella di chi la indossa.  
 
-    La cura dei dettagli, la scelta dei materiali e la possibilità di personalizzazione rendono ogni pezzo unico.  
-    Miraya non segue le mode: le interpreta con delicatezza e raffinatezza, creando uno stile senza tempo.
+    La cura dei dettagli e la personalizzazione rendono ogni pezzo unico.  
+    Miraya non segue le mode: le interpreta con delicatezza e raffinatezza.
   </p>
 </section>
 
@@ -222,7 +247,9 @@ header {
   <img src="miraya4.jpg">
 </section>
 
-<!-- SHOP (RIMESSO) -->
+<!-- SHOP -->
+<section id="shop">
+
 <h2 id="shop-title">Shop</h2>
 
 <div class="product">
@@ -251,39 +278,13 @@ header {
   </div>
 </div>
 
-  <section class="insta-banner">
-  <div class="insta-content">
-    <p>Seguici su Instagram</p>
-    <a href="https://instagram.com/XXX" target="_blank">@XXX</a>
-  </div>
 </section>
 
-  .insta-banner {
-  margin-top: 80px;
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #fff0f6, #eef9ff);
-  text-align: center;
-}
+<!-- INSTAGRAM BANNER -->
+<section class="insta-banner">
+  <p>Seguici su Instagram</p>
+  <a href="https://www.instagram.com/atelier_miraya?igsh=MWt4cHJ5azYxb2hiMw==" target="_blank">@atelier_miraya</a>
+</section>
 
-.insta-content p {
-  font-size: 18px;
-  color: #777;
-  margin-bottom: 10px;
-}
-
-.insta-content a {
-  font-size: 24px;
-  font-weight: bold;
-  color: #e58db3;
-  text-decoration: none;
-  font-style: italic;
-  transition: 0.3s;
-}
-
-.insta-content a:hover {
-  color: #c76a90;
-  text-shadow: 0 0 10px rgba(229,141,179,0.4);
-}
-  
 </body>
 </html>
