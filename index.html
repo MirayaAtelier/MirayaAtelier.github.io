@@ -43,7 +43,7 @@ nav a:hover {
   color: #e58db3;
 }
 
-/* HEADER = BRAND PRIMO ELEMENTO */
+/* HEADER */
 header {
   text-align: center;
   padding: 120px 20px 20px;
@@ -62,7 +62,7 @@ header {
   color: #7db8a6;
 }
 
-/* HERO LUXURY (GOLD + GLITTER EFFECT) */
+/* HERO (FIX: rosa + corsivo + glitter soft leggibile) */
 .hero {
   height: 90vh;
   display: flex;
@@ -74,17 +74,19 @@ header {
 }
 
 .hero h2 {
-  font-size: 40px;
-  font-weight: 700;
-  max-width: 700px;
+  font-size: 42px;
+  font-style: italic;
+  font-weight: 600;
+  max-width: 750px;
 
-  /* GOLD EFFECT */
-  background: linear-gradient(90deg, #d4af37, #f7e7a6, #d4af37);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #e58db3;
 
-  /* GLITTER POP */
-  animation: shimmer 3s infinite, popIn 1.8s ease;
+  /* glitter soft */
+  text-shadow:
+    0 0 5px rgba(255,182,193,0.6),
+    0 0 10px rgba(255,182,193,0.4);
+
+  animation: popIn 1.8s ease, glow 2.5s infinite alternate;
   letter-spacing: 1px;
 }
 
@@ -157,16 +159,23 @@ header {
   line-height: 1.7;
 }
 
+/* SHOP SECTION RIPRISTINATA */
+#shop-title {
+  text-align: center;
+  font-size: 28px;
+  color: #e58db3;
+  margin-top: 80px;
+}
+
 /* ANIMATIONS */
 @keyframes popIn {
   0% { transform: scale(0.6); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
 }
 
-@keyframes shimmer {
-  0% { filter: brightness(1); }
-  50% { filter: brightness(1.3); }
-  100% { filter: brightness(1); }
+@keyframes glow {
+  from { text-shadow: 0 0 5px rgba(255,182,193,0.4); }
+  to { text-shadow: 0 0 15px rgba(255,182,193,0.9); }
 }
 </style>
 </head>
@@ -178,6 +187,7 @@ header {
   <a href="#home">HOME</a>
   <a href="#about">ABOUT</a>
   <a href="#gallery">GALLERY</a>
+  <a href="#shop">SHOP</a>
 </nav>
 
 <!-- BRAND -->
@@ -191,7 +201,7 @@ header {
   <h2>Eleganza, unicità e femminilità in ogni creazione</h2>
 </section>
 
-<!-- ABOUT (PIÙ LUNGO E BRAND STORY) -->
+<!-- ABOUT -->
 <section id="about" class="about">
   <h2>About Miraya</h2>
   <p>
@@ -200,8 +210,7 @@ header {
     Ogni creazione è pensata per raccontare una storia, quella di chi la indossa.  
 
     La cura dei dettagli, la scelta dei materiali e la possibilità di personalizzazione rendono ogni pezzo unico.  
-    Miraya non segue le mode: le interpreta con delicatezza e raffinatezza, creando uno stile senza tempo  
-    che unisce minimalismo e lusso moderno.
+    Miraya non segue le mode: le interpreta con delicatezza e raffinatezza, creando uno stile senza tempo.
   </p>
 </section>
 
@@ -213,15 +222,17 @@ header {
   <img src="miraya4.jpg">
 </section>
 
-<!-- PRODUCTS (SENZA SHOP, SOLO VETRINA) -->
+<!-- SHOP (RIMESSO) -->
+<h2 id="shop-title">Shop</h2>
+
 <div class="product">
   <img src="miraya_bijoux.png">
   <div class="product-text">
     <h3>Miraya Bijoux</h3>
     <p>
-      Borsa elegante e preziosa, pensata come un vero gioiello da indossare.  
-      Completamente personalizzabile nei colori (anche combinazioni di 2 o più colori a scelta).  
-      Ogni pezzo viene realizzato su richiesta con cura artigianale.  
+      Borsa elegante e preziosa, pensata come un vero gioiello.  
+      Personalizzabile con 2 o più colori a scelta.  
+      Realizzata artigianalmente su richiesta.  
       <br><strong>40€</strong>
     </p>
   </div>
@@ -232,13 +243,15 @@ header {
   <div class="product-text">
     <h3>Miraya Signature</h3>
     <p>
-      Icona del brand, moderna ed elegante.  
-      Design pulito e raffinato, con possibilità di personalizzazione del colore.  
-      Pensata per uno stile sofisticato ma quotidiano.  
-      <br><strong>30€</strong>
+      Icona del brand, moderna e raffinata.  
+      Colore personalizzabile secondo stile personale.  
+      Design minimal luxury.  
+      <br><strong>35€</strong>
     </p>
   </div>
 </div>
-
+<footer>
+  <p>Instagram: <a href="https://www.instagram.com/atelier_miraya?igsh=MWt4cHJ5azYxb2hiMw==">@atelier_miraya</a></p>
+</footer>
 </body>
 </html>
